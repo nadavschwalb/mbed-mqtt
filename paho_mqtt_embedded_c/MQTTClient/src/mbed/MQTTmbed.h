@@ -36,7 +36,7 @@ public:
 
     bool expired()
     {
-        return t.read_ms() >= interval_end_ms;
+        return (unsigned long)t.read_ms() >= interval_end_ms;
     }
 
     void countdown_ms(unsigned long ms)
