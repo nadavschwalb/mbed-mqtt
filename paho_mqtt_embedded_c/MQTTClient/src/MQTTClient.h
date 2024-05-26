@@ -318,6 +318,9 @@ void MQTT::Client<Network, Timer, a, MAX_MESSAGE_HANDLERS>::cleanSession()
 template<class Network, class Timer, int a, int MAX_MESSAGE_HANDLERS>
 void MQTT::Client<Network, Timer, a, MAX_MESSAGE_HANDLERS>::closeSession()
 {
+    last_sent.stop();
+    last_received.stop();
+    ping_sent.stop();
     ping_outstanding = false;
     isconnected = false;
     if (cleansession)
