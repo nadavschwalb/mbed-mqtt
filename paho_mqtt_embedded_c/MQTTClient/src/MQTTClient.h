@@ -114,7 +114,6 @@ class Client
 {
 
 public:
-
     typedef void (*messageHandler)(MessageData&);
 
     /** Construct the client
@@ -234,10 +233,9 @@ public:
     {
         return isconnected;
     }
-
-private:
-
     void closeSession();
+
+private:    
     void cleanSession();
     int cycle(Timer& timer);
     int waitfor(int packet_type, Timer& timer);

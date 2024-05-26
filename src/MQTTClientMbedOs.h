@@ -234,6 +234,8 @@ public:
      */
     nsapi_error_t setMessageHandler(const char *topicFilter, messageHandler mh);
 
+    void mqttClientCloseSession();
+
 private:
     /**
      * @brief Helper function to initialize member variables.

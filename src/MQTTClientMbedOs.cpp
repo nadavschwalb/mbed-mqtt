@@ -214,3 +214,8 @@ void MQTTClient::init(Socket *sock)
     client = NULL;
     clientSN = NULL;
 }
+
+void MQTTClient::mqttClientCloseSession()
+{
+    client->closeSession();
+}
